@@ -14,13 +14,13 @@ class Question(models.Model):
         return str(self.text)
 
     def get_answers(self):
-        return self.answer_set.all()
+        return self.answers.all()
 
 
 class Answer(models.Model):
     text = models.CharField(max_length=200)
     correct = models.BooleanField(default=False)
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='answers')
     created = models.DateField(auto_now_add=True)
 
     def __str__(self):
