@@ -8,7 +8,7 @@ const startBtn = document.getElementById('start-button')
 
 const url = window.location.href
 
-modalBtns.forEach(modalBtn=> modalBtn.addEventListener('click', ()=>{
+modalBtns.forEach(modalBtn => modalBtn.addEventListener('click', () => {
     // console.log(modalBtn)
     const pk = modalBtn.getAttribute('data-pk')
     const name = modalBtn.getAttribute('data-quiz')
@@ -29,7 +29,7 @@ modalBtns.forEach(modalBtn=> modalBtn.addEventListener('click', ()=>{
         </div>
     `
 
-    startBtn.addEventListener('click', ()=>{
+    startBtn.addEventListener('click', () => {
         window.location.href = url + pk
     })
 
